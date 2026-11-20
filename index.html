@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>CampusBite — Order canteen food without the queue</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="CampusBite home">CampusBite</a>
+    <nav class="nav-actions" aria-label="Account">
+      <a class="nav-login" href="#login" data-notice="Log in is part of the CampusBite prototype.">Log in</a>
+      <a class="nav-signup" href="#signup" data-notice="Sign up is part of the CampusBite prototype.">Sign up</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section aria-labelledby="headline">
+      <h1 id="headline">Order canteen food<br><span>without the queue.</span></h1>
+      <p class="intro">Browse the menu, pay with the mock wallet and track your order.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#get-started" data-notice="Getting started is part of the CampusBite prototype.">Get started</a>
+        <a class="button button-secondary" href="#login" data-notice="Log in is part of the CampusBite prototype.">Log in</a>
+      </div>
+    </section>
+
+    <section class="steps" aria-label="How CampusBite works">
+      <article class="step-card">
+        <h2>1. Browse</h2>
+        <p>See the menu and prices.</p>
+      </article>
+      <article class="step-card">
+        <h2>2. Pay</h2>
+        <p>Pay with the mock wallet.</p>
+      </article>
+      <article class="step-card">
+        <h2>3. Track</h2>
+        <p>Follow your order status.</p>
+      </article>
+    </section>
+  </main>
+
+  <div class="notice" role="status" aria-live="polite"></div>
+  <script src="script.js" defer></script>
+</body>
+</html>
