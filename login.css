@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #fafafa;
+  color: #242424;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.brand {
+  margin-bottom: 32px;
+  color: #e85f24;
+  font-size: 23px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.login-box {
+  width: min(358px, 100%);
+  min-height: 423px;
+  padding: 18px 28px 20px;
+  border: 1px solid #e8e6e5;
+  border-radius: 11px;
+  background: #fff;
+}
+
+h1 {
+  margin: 0 0 17px;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+label {
+  display: block;
+  margin: 0 0 5px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 0 13px;
+  border: 1px solid #dcd9d7;
+  border-radius: 10px;
+  color: #242424;
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #e85f24;
+  box-shadow: 0 0 0 2px rgb(232 95 36 / 12%);
+}
+
+input::placeholder {
+  color: #8d8986;
+  opacity: 1;
+}
+
+a:not(.brand) {
+  color: #e85f24;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.forgot-link {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.login-button,
+.role-button {
+  border: 0;
+  background: #e85f24;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.login-button {
+  width: 100%;
+  height: 43px;
+  margin-top: 22px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.login-button:hover,
+.role-button:hover,
+.role-button[aria-pressed="true"] {
+  background: #cf4e19;
+}
+
+.as-label {
+  margin: 9px 0 10px;
+  color: #e85f24;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+}
+
+.roles {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 13px;
+}
+
+.role-button {
+  min-width: 78px;
+  height: 25px;
+  padding: 0 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.register-line {
+  margin: 13px 0 0;
+  color: #8d8986;
+  font-size: 12px;
+  text-align: center;
+}
+
+.register-line a {
+  margin-left: 6px;
+}
+
+.message {
+  min-height: 14px;
+  margin: 8px 0 0;
+  color: #8d8986;
+  font-size: 11px;
+  text-align: center;
+}
+
+@media (max-width: 420px) {
+  .page {
+    padding: 24px 16px;
+  }
+
+  .login-box {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  .roles {
+    gap: 8px;
+    padding: 0 4px;
+  }
+
+  .role-button {
+    min-width: 0;
+    flex: 1;
+    padding: 0 8px;
+  }
+}
