@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Reset your CampusBite account password."
+    />
+    <title>Forgot password? | CampusBite</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <div class="reset-layout">
+        <a class="brand" href="#" aria-label="CampusBite home">CampusBite</a>
+
+        <section class="reset-card" aria-labelledby="page-title">
+          <div class="lock-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect
+                x="6.75"
+                y="10.25"
+                width="10.5"
+                height="9"
+                rx="1.5"
+                stroke="currentColor"
+                stroke-width="1.7"
+              />
+              <path
+                d="M9 10.25V7.5a3 3 0 0 1 6 0v2.75"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+
+          <h1 id="page-title">Forgot password?</h1>
+          <p class="description">
+            Enter your email and we will send you<br class="desktop-break" />
+            a link to reset your password.
+          </p>
+
+          <form id="reset-form">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="name@student.edu"
+              autocomplete="email"
+              required
+            />
+            <button type="submit">Send reset link</button>
+          </form>
+
+          <a class="back-link" href="#login">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path
+                d="m9.5 3.5-4 4.5 4 4.5"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+              />
+            </svg>
+            <span>Back to log in</span>
+          </a>
+          <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+        </section>
+
+        <p class="prototype-note">Prototype only - no real email is sent.</p>
+      </div>
+    </main>
+  </body>
+</html>
