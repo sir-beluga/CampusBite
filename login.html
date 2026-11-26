@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusBite | Log in</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <main class="page">
+    <a class="brand" href="index.html">CampusBite</a>
+
+    <section class="login-box">
+      <h1>Log in</h1>
+
+      <form id="login-form">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="name@student.edu" required>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="••••••••" required>
+
+        <a class="forgot-link" href="#forgot-password">Forgot password?</a>
+        <button class="login-button" type="submit">Log in</button>
+      </form>
+
+      <div class="as-label">as</div>
+      <div class="roles" aria-label="Choose account type">
+        <button type="button" class="role-button" aria-pressed="false">Admin</button>
+        <button type="button" class="role-button" aria-pressed="false">Owner</button>
+        <button type="button" class="role-button" aria-pressed="true">Student</button>
+      </div>
+
+      <p class="register-line">New student? <a href="#register">Register</a></p>
+      <p class="message" id="message" aria-live="polite"></p>
+    </section>
+  </main>
+  <script src="login.js"></script>
+</body>
+</html>
