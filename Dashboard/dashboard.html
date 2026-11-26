@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f7">
+  <title>Dashboard | CampusBite</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <script src="dashboard.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#dashboard" aria-label="CampusBite home">CampusBite</a>
+      <nav class="nav-links">
+        <a class="nav-link active" href="#dashboard" aria-current="page">Dashboard</a>
+        <a class="nav-link" href="#menu">Menu Catalog</a>
+        <a class="nav-link" href="#cart">My Cart</a>
+        <a class="nav-link" href="#orders">My Orders</a>
+        <a class="nav-link" href="#wallet">Wallet (Mock)</a>
+        <span class="nav-caption">Support</span>
+        <a class="nav-link" href="#complaints">Submit Complaint</a>
+        <a class="nav-link" href="#tracking">Complaint Tracking</a>
+        <a class="nav-link" href="#history">Complaint History</a>
+      </nav>
+      <a class="logout" href="#logout" id="logoutLink">Logout</a>
+    </aside>
+
+    <main class="main-area" id="dashboard">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+        <h1>Dashboard</h1>
+        <span class="profile">xyz <span>(Student)</span></span>
+      </header>
+
+      <div class="content">
+        <section class="summary-grid" aria-label="Account summary">
+          <article class="summary-card">
+            <p class="eyebrow">Wallet balance</p>
+            <p class="summary-value">Rs 2,500.00</p>
+            <p class="subtext">Simulated money</p>
+          </article>
+          <article class="summary-card">
+            <p class="eyebrow">Active order</p>
+            <p class="summary-value">#1021 - Preparing</p>
+            <p class="subtext">Est. 08:42 left (illustrative)</p>
+          </article>
+          <article class="summary-card">
+            <p class="eyebrow">Open complaints</p>
+            <p class="summary-value">1</p>
+            <p class="subtext">In review</p>
+          </article>
+        </section>
+
+        <section class="panel orders-panel" id="orders">
+          <h2>Recent orders</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">Order</th><th scope="col">Items</th><th scope="col">Total</th><th scope="col">Status</th><th scope="col">Date</th></tr></thead>
+              <tbody>
+                <tr><td><a class="order-id" href="#order-1021">#1021</a></td><td>2x Chicken Burger, 1x Iced Tea</td><td class="money">Rs 850</td><td><span class="badge preparing"><i></i>Preparing</span></td><td class="date">Today</td></tr>
+                <tr><td><a class="order-id" href="#order-1012">#1012</a></td><td>3x Samosa, 1x Iced Tea</td><td class="money">Rs 390</td><td><span class="badge completed"><i></i>Completed</span></td><td class="date">Oct 29</td></tr>
+                <tr><td><a class="order-id" href="#order-1010">#1010</a></td><td>1x Chicken Burger</td><td class="money">Rs 350</td><td><span class="badge completed"><i></i>Completed</span></td><td class="date">Oct 27</td></tr>
+                <tr><td><a class="order-id" href="#order-1004">#1004</a></td><td>1x Veg Fried Rice</td><td class="money">Rs 400</td><td><span class="badge completed"><i></i>Completed</span></td><td class="date">Oct 24</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel complaints-panel" id="complaints">
+          <div class="panel-heading"><h2>My complaints</h2><button class="primary-button" id="newComplaint">New complaint</button></div>
+          <div class="complaint-list" id="complaintList">
+            <div class="complaint-row"><a class="order-id" href="#c-0042">C-0042</a><span class="complaint-detail">Order delayed by 20 minutes</span><span class="badge review"><i></i>In Review</span><span class="date">Oct 28</span></div>
+            <div class="complaint-row"><a class="order-id" href="#c-0037">C-0037</a><span class="complaint-detail">Wrong item received</span><span class="badge resolved"><i></i>Resolved</span><span class="date">Oct 24</span></div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
