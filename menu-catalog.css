@@ -1,0 +1,97 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #262321;
+  background: #fafafa;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --orange: #f45108;
+  --line: #e7e5e3;
+  --muted: #77716d;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+.sidebar {
+  position: fixed; inset: 0 auto 0 0; z-index: 2; width: 173px;
+  display: flex; flex-direction: column; padding: 0 9px 9px 5px;
+  background: #fff; border-right: 1px solid var(--line);
+}
+.brand { height: 49px; padding: 16px 9px 0; color: var(--orange); font-size: 15px; font-weight: 700; text-decoration: none; }
+.main-nav, .support-nav { display: grid; gap: 3px; }
+.main-nav { margin-top: 7px; }
+.main-nav a, .support-nav a, .logout {
+  display: flex; align-items: center; min-height: 29px; padding: 0 12px;
+  border-radius: 8px; color: #625d59; font-size: 11px; text-decoration: none;
+}
+.main-nav a.active { background: #fff0dc; color: #c83d00; font-weight: 700; }
+.support-label { margin: 12px 9px 9px; color: #77716d; font-size: 9px; font-weight: 700; text-transform: uppercase; }
+.logout { min-height: 36px; margin-top: auto; border-top: 1px solid var(--line); border-radius: 0; }
+.app-main { min-height: 100vh; margin-left: 173px; }
+.topbar { height: 48px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; background: #fff; border-bottom: 1px solid var(--line); }
+.topbar h1 { margin: 0; font-size: 15px; font-weight: 700; }
+.user-label { color: #5f5955; font-size: 10px; }
+.catalog-content { padding: 17px 23px 28px; }
+.toolbar { display: flex; align-items: center; gap: 17px; margin-bottom: 14px; }
+.search-wrap input { width: 221px; height: 31px; padding: 0 12px; border: 1px solid #dedbd8; border-radius: 8px; outline: none; background: white; font-size: 10px; }
+.search-wrap input:focus { border-color: var(--orange); box-shadow: 0 0 0 2px #f451081a; }
+.filters { display: flex; gap: 7px; }
+.filter { height: 28px; min-width: 44px; padding: 0 14px; border: 1px solid #dedbd8; border-radius: 20px; background: #fff; color: #48433f; font-size: 10px; }
+.filter.active { border-color: var(--orange); background: var(--orange); color: white; font-weight: 700; }
+.button { border: 0; border-radius: 9px; background: var(--orange); color: white; font-size: 10px; font-weight: 700; }
+.cart-top { width: 103px; height: 30px; margin-left: auto; }
+.menu-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 13px 14px; }
+.food-card { min-width: 0; min-height: 192px; padding: 8px; border: 1px solid var(--line); border-radius: 9px; background: #fff; }
+.food-art { position: relative; display: grid; place-items: center; width: 100%; aspect-ratio: 2 / 1; overflow: hidden; border: 1px solid #dfdddb; border-radius: 7px; background: #f3f1ef; }
+.food-photo { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+.food-art.emoji, .food-art.image-failed { background: linear-gradient(135deg, #fff4e7, #f9dfc4); }
+.food-emoji { z-index: 1; font-size: 46px; line-height: 1; }
+.food-name { margin: 9px 3px 0; overflow: hidden; font-size: 12px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.food-meta { margin: 5px 3px 0; color: #847e79; font-size: 9px; }
+.card-bottom { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin: 19px 3px 0; }
+.price { font-size: 14px; font-weight: 700; white-space: nowrap; }
+.add-button { min-width: 59px; height: 26px; padding: 0 12px; }
+.unavailable { padding: 5px 10px; border-radius: 14px; background: #f4f4f3; color: #68635f; font-size: 9px; font-weight: 700; white-space: nowrap; }
+.quantity { display: flex; align-items: center; height: 26px; overflow: hidden; border: 1px solid #dedbd8; border-radius: 7px; }
+.quantity button { width: 22px; height: 100%; border: 0; background: white; color: #282522; font-weight: 700; }
+.quantity span { min-width: 27px; padding: 0 5px; border-right: 1px solid #eee; border-left: 1px solid #eee; text-align: center; font-size: 11px; font-weight: 700; }
+.cart-summary { min-height: 48px; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 20px; padding: 7px 11px 7px 17px; border: 1px solid var(--line); border-radius: 9px; background: #fff; }
+.cart-summary strong { font-size: 11px; }
+.view-cart { width: 115px; height: 33px; }
+.empty-state { padding: 25px 0; color: var(--muted); text-align: center; font-size: 13px; }
+.toast { position: fixed; right: 20px; bottom: 20px; z-index: 4; max-width: min(360px, calc(100vw - 40px)); padding: 12px 16px; transform: translateY(10px); border-radius: 8px; background: #292521; color: #fff; font-size: 12px; opacity: 0; pointer-events: none; transition: opacity .18s, transform .18s; }
+.toast.visible { transform: translateY(0); opacity: 1; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%); }
+
+@media (max-width: 920px) {
+  .menu-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .toolbar { flex-wrap: wrap; gap: 10px; }
+  .cart-top { margin-left: auto; }
+}
+@media (max-width: 680px) {
+  .sidebar { width: 62px; padding: 0 5px 8px; }
+  .brand { padding: 15px 3px 0; overflow: hidden; font-size: 0; }
+  .brand::first-letter { font-size: 15px; }
+  .main-nav a, .support-nav a, .logout { justify-content: center; padding: 0 3px; overflow: hidden; font-size: 0; white-space: nowrap; }
+  .main-nav a::first-letter, .support-nav a::first-letter, .logout::first-letter { font-size: 12px; }
+  .support-label { margin-right: 0; margin-left: 0; overflow: hidden; font-size: 0; }
+  .app-main { margin-left: 62px; }
+  .topbar { padding: 0 14px; }
+  .catalog-content { padding: 14px 12px 24px; }
+  .search-wrap { flex: 1 1 100%; }
+  .search-wrap input { width: 100%; }
+  .filters { gap: 5px; }
+  .filter { padding: 0 11px; }
+  .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .food-card { min-height: 182px; padding: 7px; }
+  .card-bottom { margin-top: 15px; }
+  .price { font-size: 12px; }
+  .add-button { min-width: 51px; }
+}
+@media (max-width: 390px) {
+  .menu-grid { grid-template-columns: 1fr; }
+  .food-card { min-height: 220px; }
+  .filters { width: 100%; }
+  .filter { flex: 1; padding: 0 7px; }
+}
