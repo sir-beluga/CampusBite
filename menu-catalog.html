@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Menu Catalog | CampusBite</title>
+  <link rel="stylesheet" href="menu-catalog.css">
+  <script src="menu-catalog.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar" aria-label="Main navigation">
+    <a class="brand" href="#catalog">CampusBite</a>
+    <nav class="main-nav">
+      <a href="#dashboard">Dashboard</a>
+      <a class="active" href="#catalog" aria-current="page">Menu Catalog</a>
+      <a href="#cart">My Cart</a>
+      <a href="#orders">My Orders</a>
+      <a href="#wallet">Wallet (Mock)</a>
+    </nav>
+    <p class="support-label">Support</p>
+    <nav class="support-nav">
+      <a href="#complaint">Submit Complaint</a>
+      <a href="#tracking">Complaint Tracking</a>
+      <a href="#history">Complaint History</a>
+    </nav>
+    <a class="logout" href="#logout">Logout</a>
+  </aside>
+
+  <main class="app-main" id="catalog">
+    <header class="topbar">
+      <h1>Menu Catalog</h1>
+      <span class="user-label">xyz (Student)</span>
+    </header>
+    <section class="catalog-content" aria-label="Food menu">
+      <div class="toolbar">
+        <label class="search-wrap">
+          <span class="sr-only">Search food</span>
+          <input id="food-search" type="search" placeholder="Search food..." autocomplete="off">
+        </label>
+        <div class="filters" role="group" aria-label="Filter by category">
+          <button class="filter active" type="button" data-category="All" aria-pressed="true">All</button>
+          <button class="filter" type="button" data-category="Snacks" aria-pressed="false">Snacks</button>
+          <button class="filter" type="button" data-category="Meals" aria-pressed="false">Meals</button>
+          <button class="filter" type="button" data-category="Drinks" aria-pressed="false">Drinks</button>
+        </div>
+        <button class="button cart-top" type="button" data-view-cart>Cart</button>
+      </div>
+
+      <div class="menu-grid" id="menu-grid" aria-live="polite"></div>
+      <p class="empty-state" id="empty-state" hidden>No food matches your search.</p>
+
+      <section class="cart-summary" id="cart" aria-label="Cart summary">
+        <strong id="cart-summary-text">Cart: 2 items - Rs 850</strong>
+        <button class="button view-cart" type="button" data-view-cart>View cart</button>
+      </section>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
